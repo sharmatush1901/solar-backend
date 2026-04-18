@@ -10,10 +10,8 @@ from app.db.database import cursor, conn
 # ===============================
 # LOAD ENV
 # ===============================
-BASE_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), "../../"))
-ENV_PATH = os.path.join(BASE_DIR, ".env")
-
-load_dotenv(ENV_PATH)
+from dotenv import load_dotenv
+load_dotenv()  # safe for both local + render
 
 print("ENV PATH:", ENV_PATH)
 print("FILE EXISTS:", os.path.exists(ENV_PATH))
